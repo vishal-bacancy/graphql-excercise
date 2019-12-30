@@ -31,6 +31,6 @@ class ApplicationController < ActionController::Base
       # Use static access token from environment. However, here we have access
       # to the current request so we could configure the token to be retrieved
       # from a session cookie.
-      { access_token: GitHub::Application.secrets.github_access_token }
+      { access_token: "0b92e94244440575ff4227ed5ccd85213fb7134c" }
     end
 end
