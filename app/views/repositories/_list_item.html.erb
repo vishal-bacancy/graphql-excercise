@@ -1,4 +1,4 @@
-<%graphql
+<%# <%graphql
   fragment Repository on Repository {
     id
     owner {
@@ -12,13 +12,13 @@
     ...Views::Repositories::Star::Repository
   }
 %>
-<% repository = Views::Repositories::ListItem::Repository.new(repository) %>
+<%# repository = Views::Repositories::ListItem::Repository.new(repository) %>
 
 <li class="list-group-item">
-  <%= render "repositories/star", repository: repository %>
-  <%= render "repositories/icon", repository: repository %>
-
-  <a href="<%= repository_path(repository.id) %>">
-    <%= repository.owner.login %>/<%= repository.name %>
-  </a>
+  <%#= render "repositories/star", repository: repository %>
+  <%#= render "repositories/icon", repository: repository %>
+  <%= link_to repository.name, repository_path(id: repository.name) %>
+  <!-- <a href="<%#= repository.url %>">
+    <%#= repository.name %>
+  </a> -->
 </li>
