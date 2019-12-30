@@ -43,8 +43,8 @@ class RepositoriesController < ApplicationController
             }
           }
         }
-      }
     }
+  }
   GRAPHQL
 
   # GET /repositories
@@ -60,8 +60,11 @@ class RepositoriesController < ApplicationController
           total_count: data.organization.repositories.total_count
         }
       }
-      data = query CsvQuery
-      format.csv { send_data generate_csv(data.organization.repositories), filename: "repositories-#{Date.today}" }
+      format.csv {
+        data = query CsvQuery
+         send_data generate_csv(data.organization.repositories), filename: "repositories-#{Date.today}"
+       }
+
     end
 
   end
