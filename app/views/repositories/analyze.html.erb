@@ -1,0 +1,14 @@
+
+
+<%= link_to "Back", "/" %>
+<div class="repositories">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>Your repositories</strong>
+      <%# NOTE: total_count is snake case here %>
+      <span class="badge"><%= total_count %></span>
+    </li>
+
+    <%= render "repositories/repositories", repositories: data %>
+  </ul>
+</div>
